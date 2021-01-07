@@ -68,6 +68,8 @@ function buildQueuePromises (queue, transactionId, chain): any[] {
     promises.push(queue[i].getTxData(transactionId, chain));
   }
 
+  console.log({queue0GetTxData: queue[0].getTxData(transactionId, chain)})
+
   return promises;
 }
 
