@@ -48,8 +48,8 @@ const BLOCKCHAINS: {[chain in SupportedChains]: IBlockchainObject} = {
     name: 'Ethereum Testnet',
     signatureValue: 'ethereumRopsten',
     transactionTemplates: {
-      full: `https://ropsten.etherscan.io/tx/${TRANSACTION_ID_PLACEHOLDER}`,
-      raw: `https://ropsten.etherscan.io/getRawTx?tx=${TRANSACTION_ID_PLACEHOLDER}`
+      full: `https://ropsten.etherscan.io/tx/${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`,
+      raw: `https://ropsten.etherscan.io/getRawTx?tx=${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`
     }
   },
   [SupportedChains.Ethrinkeby]: {

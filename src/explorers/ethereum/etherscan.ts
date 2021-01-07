@@ -12,15 +12,15 @@ import { TRANSACTION_APIS } from '../../constants/api';
 const MAIN_API_BASE_URL = 'https://api.etherscan.io/api?module=proxy';
 const TEST_API_BASE_URL = 'https://api-ropsten.etherscan.io/api?module=proxy';
 const serviceURL: ExplorerURLs = {
-  main: `${MAIN_API_BASE_URL}&action=eth_getTransactionByHash&txhash=${TRANSACTION_ID_PLACEHOLDER}`,
-  test: `${TEST_API_BASE_URL}&action=eth_getTransactionByHash&txhash=${TRANSACTION_ID_PLACEHOLDER}`
+  main: `${MAIN_API_BASE_URL}&action=eth_getTransactionByHash&txhash=${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`,
+  test: `${TEST_API_BASE_URL}&action=eth_getTransactionByHash&txhash=${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`
 };
 
 async function parsingFunction (jsonResponse, chain: SupportedChains, key: string, keyPropertyName: string): Promise<TransactionData> {
   const getBlockByNumberServiceUrls: Partial<ExplorerAPI> = {
     serviceURL: {
-      main: `${MAIN_API_BASE_URL}&action=eth_getBlockByNumber&boolean=true&tag=${TRANSACTION_ID_PLACEHOLDER}`,
-      test: `${TEST_API_BASE_URL}&action=eth_getBlockByNumber&boolean=true&tag=${TRANSACTION_ID_PLACEHOLDER}`
+      main: `${MAIN_API_BASE_URL}&action=eth_getBlockByNumber&boolean=true&tag=${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`,
+      test: `${TEST_API_BASE_URL}&action=eth_getBlockByNumber&boolean=true&tag=${TRANSACTION_ID_PLACEHOLDER}&apikey=FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D`
     }
   };
   const getBlockNumberServiceUrls: Partial<ExplorerAPI> = {
