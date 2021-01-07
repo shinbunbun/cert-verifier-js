@@ -118,7 +118,7 @@ export default async function lookForTx (
     explorerAPIs: explorerAPIs
   })
 
-  console.log({defaultAPIs: getExplorersByChain(chain, certificateVersion, explorerAPIs)})
+  console.log({getTxData: getExplorersByChain(chain, certificateVersion, explorerAPIs)[0].getTxData})
 
   console.log({lookupQueues: lookupQueues});
 
