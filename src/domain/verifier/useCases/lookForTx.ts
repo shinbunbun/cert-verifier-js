@@ -63,14 +63,14 @@ function buildQueuePromises (queue, transactionId, chain): any[] {
   }
 
   const promises: any[] = [];
+  console.log({promises: promises})
   const limit: number = CONFIG.Race ? queue.length : CONFIG.MinimumBlockchainExplorers;
   for (let i = 0; i < limit; i++) {
     promises.push(queue[i].getTxData(transactionId, chain));
   }
 
   console.log({queue0GetTxData: queue[0].getTxData(transactionId, chain)})
-  console.log({queue0GetTxData: queue[1].getTxData(transactionId, chain)})
-  console.log(promises)
+  console.log({queue1GetTxData: queue[1].getTxData(transactionId, chain)})
 
   return promises;
 }
