@@ -65,6 +65,8 @@ async function parsingFunction (jsonResponse, chain: SupportedChains, key: strin
       const responseData = JSON.parse(response);
       const blockData = responseData.result;
 
+      console.log({blockData: blockData})
+
       await checkEtherScanConfirmations(chain, blockNumber);
       return blockData;
     } catch (err) {

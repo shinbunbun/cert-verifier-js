@@ -108,7 +108,7 @@ export default class Verifier {
     if (domain.explorerAPIs.ensureValidity(customExplorerAPIs)) {
       this.explorerAPIs.custom = explorerFactory(customExplorerAPIs);
     }
-    console.log({explorerAPIs2: this.explorerAPIs})
+    console.log({custom: this.explorerAPIs.custom})
   }
 
   _getRevocationListUrl (distantIssuerProfile): any { // TODO: define revocationList type
