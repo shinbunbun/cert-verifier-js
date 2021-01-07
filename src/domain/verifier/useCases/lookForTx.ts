@@ -112,7 +112,7 @@ export default async function lookForTx (
     customAPIs: explorerAPIs.custom
   });
 
-  console.log({lookupQueues: lookupQueues});
+  console.log({lookupQueues: lookupQueues[0][0].getTxData(transactionId, chain)});
 
   // Run queue
   const currentQueueProcessedIndex = 0;
