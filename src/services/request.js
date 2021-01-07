@@ -18,7 +18,10 @@ export function request (obj) {
 
     request.onload = () => {
       if (request.status >= 200 && request.status < 300) {
-        console.log({requestResponseText: JSON.parse(request.responseText)})
+        console.log({
+          requestResponseText: JSON.parse(request.responseText),
+          url: url
+        })
         resolve(request.responseText);
       } else {
         const failureMessage = `Error fetching url:${url}; status code:${request.status}`;
