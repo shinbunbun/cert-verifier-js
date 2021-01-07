@@ -208,12 +208,7 @@ export default class Verifier {
       })
     );
 
-    console.log(async () => await domain.verifier.lookForTx({
-      transactionId: this.transactionId,
-      chain: this.chain.code,
-      certificateVersion: this.version,
-      explorerAPIs: this.explorerAPIs
-    }));
+    console.log({txData: txData})
 
     // Get issuer profile
     let issuerProfileJson = this.issuer;

@@ -111,6 +111,8 @@ export default async function lookForTx (
     customAPIs: explorerAPIs.custom
   });
 
+  console.log(lookupQueues);
+
   // Run queue
   const currentQueueProcessedIndex = 0;
   return await runQueueByIndex(lookupQueues, currentQueueProcessedIndex, transactionId, chain);
