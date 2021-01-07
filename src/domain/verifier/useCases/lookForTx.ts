@@ -91,6 +91,7 @@ function buildPromiseRacesQueue (
 async function runQueueByIndex (queues, index: number, transactionId, chain): Promise<TransactionData> {
   try {
     const race = buildQueuePromises(queues[index], transactionId, chain);
+    console.log({race: race})
     return await runPromiseRace(race);
   } catch (err) {
     if (index < queues.length - 1) {
@@ -111,7 +112,7 @@ export default async function lookForTx (
     customAPIs: explorerAPIs.custom
   });
 
-  console.log(lookupQueues);
+  console.log({lookupQueues: lookupQueues});
 
   // Run queue
   const currentQueueProcessedIndex = 0;
