@@ -38,6 +38,13 @@ async function parsingFunction (jsonResponse, chain: SupportedChains, key: strin
     const issuingAddress: string = data.from;
     const remoteHash = stripHashPrefix(data.input, BLOCKCHAINS.ethmain.prefixes); // remove '0x'
 
+    console.log({parseEtherScanResponse: {
+      remoteHash,
+      issuingAddress,
+      time,
+      revokedAddresses: []
+    }})
+
     // The method of checking revocations by output spent do not work with Ethereum.
     // There are no input/outputs, only balances.
     return {
