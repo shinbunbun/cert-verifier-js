@@ -19,6 +19,13 @@ export type TExplorerParsingFunction = ((jsonResponse, chain?: SupportedChains, 
 ((jsonResponse, chain?: SupportedChains, key?: string, keyPropertyName?: string) => Promise<TransactionData>);
 
 export function explorerFactory (TransactionAPIArray: ExplorerAPI[]): TExplorerFunctionsArray {
+  TransactionAPIArray
+    .map(explorerAPI => (
+      {
+        getTxData: async (transactionId, chain) => console.log({getTransactionFromApi: await getTransactionFromApi(explorerAPI, transactionId, chain)}),
+        priority: explorerAPI.priority
+      }
+    ));
   return TransactionAPIArray
     .map(explorerAPI => (
       {
