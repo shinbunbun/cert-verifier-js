@@ -16,9 +16,11 @@ function getCaseInsensitiveKey (obj, value) {
 }
 
 export default function ensureValidIssuingKey (keyMap, txIssuingAddress, txTime) {
+  console.log({txTimeA: txTime});
   let validKey = false;
   const theKey = getCaseInsensitiveKey(keyMap, txIssuingAddress);
   txTime = dateToUnixTimestamp(txTime);
+  console.log({txTimeB: txTime});
   if (theKey) {
     validKey = true;
     if (theKey.created) {
@@ -33,7 +35,6 @@ export default function ensureValidIssuingKey (keyMap, txIssuingAddress, txTime)
   }
   console.log({validKey: validKey});
   console.log({theKey: theKey});
-  console.log({txTime: txTime});
   if (!validKey) {
     throw new VerifierError(
       SUB_STEPS.checkAuthenticity,
