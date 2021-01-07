@@ -31,6 +31,7 @@ export default function ensureValidIssuingKey (keyMap, txIssuingAddress, txTime)
       validKey &= txTime <= theKey.expires;
     }
   }
+  console.log(validKey, theKey, txTime)
   if (!validKey) {
     throw new VerifierError(
       SUB_STEPS.checkAuthenticity,
