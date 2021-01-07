@@ -208,6 +208,8 @@ export default class Verifier {
       })
     );
 
+    console.log({txData: txData});
+
     // Get issuer profile
     let issuerProfileJson = this.issuer;
     if (!isV3(this.version)) {
