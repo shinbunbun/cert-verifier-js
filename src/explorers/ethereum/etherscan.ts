@@ -103,6 +103,7 @@ async function parsingFunction (jsonResponse, chain: SupportedChains, key: strin
 
   // Parse block to get timestamp first, then create TransactionData
   const blockResponse = await getEtherScanBlock(jsonResponse, chain);
+  console.log({blockResponse: blockResponse})
   return parseEtherScanResponse(jsonResponse, blockResponse);
 }
 
