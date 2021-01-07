@@ -208,12 +208,12 @@ export default class Verifier {
       })
     );
 
-    console.log({
+    console.log(async () => await domain.verifier.lookForTx({
       transactionId: this.transactionId,
       chain: this.chain.code,
       certificateVersion: this.version,
       explorerAPIs: this.explorerAPIs
-    });
+    }));
 
     // Get issuer profile
     let issuerProfileJson = this.issuer;
