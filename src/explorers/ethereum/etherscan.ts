@@ -33,6 +33,7 @@ async function parsingFunction (jsonResponse, chain: SupportedChains, key: strin
   function parseEtherScanResponse (jsonResponse, block): TransactionData {
     const data = jsonResponse.result;
     console.log({parseEtherScanResponseData: data})
+    console.log({block: block})
     const time: Date = new Date(parseInt(block.timestamp, 16) * 1000);
     const issuingAddress: string = data.from;
     const remoteHash = stripHashPrefix(data.input, BLOCKCHAINS.ethmain.prefixes); // remove '0x'
