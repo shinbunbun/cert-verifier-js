@@ -60,6 +60,7 @@ export function overwriteDefaultExplorers (explorerAPIs: ExplorerAPI[] = [], def
 }
 
 export function getDefaultExplorers (explorerAPIs?: ExplorerAPI[]): TDefaultExplorersPerBlockchain {
+  console.log({EthereumExplorers: explorerFactory(overwriteDefaultExplorers(explorerAPIs, EthereumExplorers))})
   return {
     bitcoin: explorerFactory(overwriteDefaultExplorers(explorerAPIs, BitcoinExplorers)),
     ethereum: explorerFactory(overwriteDefaultExplorers(explorerAPIs, EthereumExplorers)),
