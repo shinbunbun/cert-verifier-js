@@ -69,6 +69,8 @@ function buildQueuePromises (queue, transactionId, chain): any[] {
   }
 
   console.log({queue0GetTxData: queue[0].getTxData(transactionId, chain)})
+  console.log({queue0GetTxData: queue[1].getTxData(transactionId, chain)})
+  console.log(promises)
 
   return promises;
 }
@@ -120,7 +122,7 @@ export default async function lookForTx (
     explorerAPIs: explorerAPIs
   })
 
-  console.log({getTxData: getExplorersByChain(chain, certificateVersion, explorerAPIs)[0].getTxData})
+  //console.log({getTxData: getExplorersByChain(chain, certificateVersion, explorerAPIs)[0].getTxData()})
 
   console.log({lookupQueues: lookupQueues});
 
